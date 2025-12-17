@@ -88,7 +88,7 @@ def get_facility_slots(facility, date_str, retry_count=0):
         
         # Check if the response status code is 200
         response_status = data.get("responseStatusCode")
-        if (response_status != 200 and response_status != "200") or (response_status != 2008 and response_status != "2008"):
+        if (response_status != 200 and response_status != "200") and (response_status != 2008 and response_status != "2008"):
             if retry_count < MAX_RETRIES:
                 print(f"Non-200 status code: {response_status} (attempt {retry_count + 1}/{MAX_RETRIES + 1})")
                 print(f"Retrying in {RETRY_DELAY} seconds...")
